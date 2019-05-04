@@ -1,4 +1,4 @@
-package com.place4code.chapter_2;
+package com.place4code.functions;
 
 import com.place4code.Employee;
 
@@ -9,14 +9,18 @@ import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
 
-public class Main {
+public class ConsumerPredicateSupplier {
+
+    /*
+     * https://docs.oracle.com/javase/8/docs/api/java/util/function/package-summary.html
+     * */
 
     public static void main(String[] args) {
 
 
-        Employee jim = new Employee("Jim", 24);
-        Employee tim = new Employee("Tim", 28);
-        Employee johny = new Employee("Johny", 32);
+        Employee jim = new Employee("Jim Tommy", 24);
+        Employee tim = new Employee("Tim Jimmy", 28);
+        Employee johny = new Employee("Johny Tony", 32);
 
         List<Employee> lista = new ArrayList<>();
         lista.add(jim);
@@ -43,6 +47,10 @@ public class Main {
             System.out.println(supp.get());
         }
 
+        //############################################################
+        lista.forEach((item) -> {
+                System.out.println(item.getName().substring(item.getName().indexOf(' ') + 1));
+        });
 
     }
 
